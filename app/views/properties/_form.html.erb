@@ -39,7 +39,9 @@
   <hr color="#c0c0c0">
 
   <%= form.fields_for :nearest_stations do |nearest_station| %>
-    <strong>最寄り駅<%= 1 + nearest_station.index %></strong>
+    <div>
+      <strong>最寄り駅<%= 1 + nearest_station.index %></strong>
+    </div>
     <div class="route">
       <%= nearest_station.label :路線名 %><br>
       <%= nearest_station.text_field :route %>
