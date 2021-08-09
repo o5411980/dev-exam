@@ -1,0 +1,42 @@
+<%= form_with(model: property, local: true) do |form| %>
+  <% if property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= property.errors.count %>件のエラーがあるため、登録できません:</h2>
+
+      <ul>
+      <% property.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :property_name %><br>
+    <%= form.text_field :property_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rent %><br>
+    <%= form.number_field :rent %>円
+  </div>
+
+  <div class="field">
+    <%= form.label :street_address %><br>
+    <%= form.text_field :street_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %><br>
+    <%= form.number_field :age %>年
+  </div>
+
+  <div class="field">
+    <%= form.label :note %><br>
+    <%= form.text_area :note %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
